@@ -11,9 +11,10 @@ import qa.guru.allureClasses.WebSteps;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.openqa.selenium.By.linkText;
 
+@Tag("simple")
 public class StepsTest {
     private static final String REPOSITORY = "eroshenkoam/allure-testops-utils";
     private static final int ISSUE = 48;
@@ -55,8 +56,7 @@ public class StepsTest {
     }
 
     @Test
-    @Disabled
     public void testDisabled() {
-        assertTrue(true);
+        assertFalse(true);
     }
 }
