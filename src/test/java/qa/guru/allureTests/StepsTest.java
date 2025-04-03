@@ -12,6 +12,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.openqa.selenium.By.linkText;
 
 @Tag("simple")
@@ -56,7 +57,12 @@ public class StepsTest {
     }
 
     @Test
-    public void testDisabled() {
+    public void testTrue() {
+        assertTrue(true);
+    }
+
+    @Test
+    public void testFalse() {
         assertFalse(true);
     }
 }
