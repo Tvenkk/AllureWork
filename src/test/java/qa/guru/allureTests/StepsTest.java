@@ -3,12 +3,15 @@ package qa.guru.allureTests;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import qa.guru.allureClasses.WebSteps;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.openqa.selenium.By.linkText;
 
 public class StepsTest {
@@ -49,5 +52,11 @@ public class StepsTest {
                 .clickOnRepositoryLink(REPOSITORY)
                 .openIssueTab()
                 .shouldSeeIssueWithNumber(ISSUE);
+    }
+
+    @Test
+    @Disabled
+    public void testDisabled() {
+        assertTrue(true);
     }
 }
