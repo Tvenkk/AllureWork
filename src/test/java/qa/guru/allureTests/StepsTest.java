@@ -3,7 +3,6 @@ package qa.guru.allureTests;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
@@ -16,12 +15,12 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.openqa.selenium.By.linkText;
 
-@Tag("simple")
-public class StepsTest {
+public class StepsTest extends BaseTest {
     private static final String REPOSITORY = "eroshenkoam/allure-testops-utils";
     private static final int ISSUE = 48;
 
     @Test
+    @Tag("remote")
     @DisplayName("Проверяем наличие Issue с номером {ISSUE} с помощью step")
     public void testLambdaStep() {
         SelenideLogger.addListener("allure", new AllureSelenide());
@@ -47,6 +46,7 @@ public class StepsTest {
     }
 
     @Test
+    @Tag("remote")
     @DisplayName("Проверяем наличие Issue с номером {ISSUE} с помощью @Step")
     public void testAnnotatedStep() {
         SelenideLogger.addListener("allure", new AllureSelenide());
@@ -60,12 +60,14 @@ public class StepsTest {
     }
 
     @Test
+    @Tag("simple")
     @DisplayName("Позитивный тест")
     public void testTrue() {
         assertTrue(true);
     }
 
     @Test
+    @Tag("simple")
     @DisplayName("Негативный тест")
     public void testFalse() {
         assertFalse(true);
