@@ -4,6 +4,7 @@ import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import qa.guru.allureClasses.WebSteps;
@@ -21,6 +22,7 @@ public class StepsTest {
     private static final int ISSUE = 48;
 
     @Test
+    @DisplayName("Проверяем наличие Issue с номером {ISSUE} с помощью step")
     public void testLambdaStep() {
         SelenideLogger.addListener("allure", new AllureSelenide());
 
@@ -45,6 +47,7 @@ public class StepsTest {
     }
 
     @Test
+    @DisplayName("Проверяем наличие Issue с номером {ISSUE} с помощью @Step")
     public void testAnnotatedStep() {
         SelenideLogger.addListener("allure", new AllureSelenide());
         WebSteps steps = new WebSteps();
@@ -57,11 +60,13 @@ public class StepsTest {
     }
 
     @Test
+    @DisplayName("Позитивный тест")
     public void testTrue() {
         assertTrue(true);
     }
 
     @Test
+    @DisplayName("Негативный тест")
     public void testFalse() {
         assertFalse(true);
     }
