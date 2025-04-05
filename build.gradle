@@ -46,3 +46,9 @@ task remote_test(type: Test) {
         includeTags("remote")
     }
 }
+
+task sgp_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("sgp")
+    }
+}
