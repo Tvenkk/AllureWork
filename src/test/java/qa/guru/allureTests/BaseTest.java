@@ -15,7 +15,7 @@ public class BaseTest {
 
     @BeforeAll
     static void beforeAll() {
-        Configuration.browser = System.getProperty("browser", "mozilla");
+        Configuration.browser = System.getProperty("browser", "Firefox");
         Configuration.browserVersion = "128.0";
         Configuration.browserSize = "1920x1080";
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
